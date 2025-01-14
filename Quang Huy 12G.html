@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ cá nhân</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000000;
+            color: #4CAF50;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            animation: color-change 3s infinite, glowing 1.5s ease-in-out infinite;
+            font-size: 28px;
+        }
+
+        @keyframes color-change {
+            0% {
+                color: #4CAF50;
+            }
+            25% {
+                color: #FF5722;
+            }
+            50% {
+                color: #2196F3;
+            }
+            75% {
+                color: #FFC107;
+            }
+            100% {
+                color: #4CAF50;
+            }
+        }
+
+        @keyframes glowing {
+            0% {
+                text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 15px #4CAF50;
+            }
+            50% {
+                text-shadow: 0 0 10px #FF5722, 0 0 20px #FF5722, 0 0 30px #FF5722;
+            }
+            100% {
+                text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 15px #4CAF50;
+            }
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            margin: 50px auto;
+            background-color: black;
+            color: #4CAF50;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .profile-container:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-left {
+            width: 30%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .profile-left iframe {
+            width: 220px;
+            height: 220px;
+            border: 2px solid #4CAF50;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-left img:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-right {
+            width: 70%;
+            padding-left: 30px;
+        }
+
+        .profile-info p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .profile-info strong {
+            color: #4CAF50;
+        }
+
+        .profile-container:hover {
+            box-shadow: 0 0 10px 5px #4CAF50;
+        }
+
+        .section h3 {
+            font-size: 22px;
+            color: #4CAF50;
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            transition: text-shadow 0.3s ease;
+        }
+
+        .section h3:hover {
+            text-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50, 0 0 30px #4CAF50;
+        }
+
+        .section {
+            margin-top: 30px;
+            background-color: black;
+            color: #4CAF50;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .section .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .box {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 220px;
+            flex-direction: column;
+        }
+
+        .box img {
+            width: 80%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px 5px #4CAF50;
+        }
+
+        .box a {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .box a:hover {
+            color: #388E3C;
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        table td {
+            background-color: #333;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #444;
+        }
+
+        table tr:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Thông tin Hồ sơ Cá nhân</h1>
+    </header>
+
+    <div class="profile-container">
+        <div class="profile-left">
+            <iframe src="https://drive.google.com/file/d/16aXepvRlVB4f9tGsNDsgJqZbVGwPQ2aV/preview" allow="autoplay"></iframe>
+        </div>
+        <div class="profile-right">
+            <h2>Phạm Quang Huy</h2>
+            <div class="profile-info">
+                <table>
+                    <tr>
+                      <td><strong>Địa chỉ:</strong></td>
+                      <td>Bình Phước</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Email:</strong></td>
+                      <td>huypq07@gmail.com</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Ngày sinh:</strong></td>
+                      <td>31/10/2007</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sở thích:</strong></td>
+                      <td>Lập trình, nghe nhạc, đá bóng</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Phim yêu thích</h3>
+        <div class="content">
+            <div class="box">
+                <img src="https://i.ytimg.com/vi/YF1eYbfbH5k/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGE4gYShlMA8=&rs=AOn4CLDt6JPoesvmQnP8qf-00JpeDZUfyA" alt="Intersteller">
+                <a href="https://www.imdb.com/title/tt0816692/" target="_blank">Interstellar</a>
+            </div>
+            <div class="box">
+                <img src="https://artofthemovies.co.uk/cdn/shop/products/pearl_harbor_advance_set_of_3_EB14594_B-resized-665131_1200x1200.jpg?v=1638037682" alt="Pearl Harbor">
+                <a href="https://www.imdb.com/title/tt0213149/" target="_blank">Pearl Harbor</a>
+            </div>
+            <div class="box">
+                <img src="https://i.pinimg.com/736x/ae/21/61/ae216154cfe91ea57a2394f682272218.jpg" alt="The Vault">
+                <a href="https://www.imdb.com/title/tt9742794/" target="_blank">The Vault</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Nhạc yêu thích</h3>
+        <div class="content">
+            <div class="box">
+                <img src="https://i.ytimg.com/vi/QGp4cUCCA1U/maxresdefault.jpg" alt="Avangard">
+                <a href="https://www.youtube.com/watch?v=osON6QMjEPk" target="_blank">Avangard</a>
+            </div>
+            <div class="box">
+                <img src="https://i.ytimg.com/vi/lpY4qzjAmSQ/maxresdefault.jpg" alt="Slava Funk">
+                <a href="https://www.youtube.com/watch?v=w_VQJBWvJcI" target="_blank">Slava Funk</a>
+            </div>
+            <div class="box">
+                <img src="https://i.ytimg.com/vi/qcsw9ksL6S4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBU_jGdr6ZJCeX5FGNEVOzrRNDrQQ" alt="Aura">
+                <a href="https://www.youtube.com/watch?v=CgXFHAEVJtA" target="_blank">Aura</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
